@@ -7,12 +7,12 @@ import DrinkPreview from '../components/DrinkPreview';
 import { Text, View } from '../components/Themed';
 
 let drinks = [
-  {key: 'Whiskey Sour', imageLink:'../img/whiskey_sour.jpg'},
-  {key: 'Touchdown', imageLink:'../img/touchdown.jpg'},
-  {key: 'Mojito', imageLink:'../img/mojito.jpg'},
-  {key: 'White Russian', imageLink:'../img/white_russian.jpg'},
-  {key: 'Margarita', imageLink:'../img/margarita.jpg'},
-  {key: 'Appletini', imageLink:'../img/appletini.jpg'},
+  {key: 'Whiskey Sour', imageLink: require('../img/appletini.jpg')},
+  {key: 'Touchdown', imageLink: require('../img/touchdown.jpg')},
+  {key: 'Mojito', imageLink: require('../img/mojito.jpg')},
+  {key: 'White Russian', imageLink: require('../img/white_russian.jpg')},
+  {key: 'Margarita', imageLink: require('../img/margarita.jpg')},
+  {key: 'Appletini', imageLink: require('../img/appletini.jpg')},
 ]
 
 export default function RecipesScreen() {
@@ -22,7 +22,7 @@ export default function RecipesScreen() {
           data={drinks}
           style={styles.flatList}
           numColumns={drinks.length / 2}
-          renderItem={({item}) => <DrinkPreview name={item.key} imageLink={item.imageLink}/>}
+          renderItem={({item}) => <DrinkPreview name={item.key} imageReference={item.imageLink}/>}
         />
     </View>
   );
