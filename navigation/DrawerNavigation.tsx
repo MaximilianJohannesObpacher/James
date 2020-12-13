@@ -7,17 +7,18 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { TabOneParamList, TabTwoParamList } from '../types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import StockScreen from '../screens/StockScreen';
 
 const Drawer = createDrawerNavigator();
 
-export default function BottomTabNavigator() {
+export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
 
   return (
     <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={TabOneNavigator} />
-      <Drawer.Screen name="Notifications" component={TabTwoNavigator} />
+      <Drawer.Screen name="Recipes" component={TabOneNavigator} />
+      <Drawer.Screen name="Orders" component={TabTwoNavigator} />
+      <Drawer.Screen name="Stock" component={StockNavigator} />
     </Drawer.Navigator>
   );
 }
@@ -39,6 +40,18 @@ function TabOneNavigator() {
         name="TabOneScreen"
         component={TabOneScreen}
         options={{ headerTitle: 'Tab One Title' }}
+      />
+    </TabOneStack.Navigator>
+  );
+}
+
+function StockNavigator() {
+  return (
+    <TabOneStack.Navigator>
+      <TabOneStack.Screen
+        name="TabOneScreen"
+        component={StockScreen}
+        options={{ headerTitle: 'Stock' }}
       />
     </TabOneStack.Navigator>
   );
