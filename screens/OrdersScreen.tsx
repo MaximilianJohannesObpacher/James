@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import DrinkPreview from '../components/DrinkPreview';
 
 import { Text, View } from '../components/Themed';
 

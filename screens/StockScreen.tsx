@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import DrinkPreview from '../components/DrinkPreview';
 import { Text, View } from '../components/Themed';
 
 export default function StockScreen() {
@@ -9,7 +9,8 @@ export default function StockScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Stock</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/StockScreen.tsx" />
+      <Text>another one</Text>
+      <DrinkPreview />
     </View>
   );
 }
