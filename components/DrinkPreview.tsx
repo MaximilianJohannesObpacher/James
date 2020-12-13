@@ -7,11 +7,13 @@ import { StyleSheet } from 'react-native';
 export default function DrinkPreview(props) {
     return (
       <View style={styles.container}>
-        <Image 
-          style={styles.previewImage}
-          source={props.imageReference} 
-        />
-        <Text style={styles.drinkName}>{props.name}</Text>
+        <View>
+          <Image 
+            style={styles.previewImage}
+            source={props.imageReference} 
+          />
+          <Text style={styles.drinkName}>{props.name}</Text>
+        </View>
       </View>
     );
   }
@@ -19,13 +21,14 @@ export default function DrinkPreview(props) {
 const styles = StyleSheet.create({
   drinkName: {
     textAlign: 'center',
-    paddingTop: 20,
+    paddingTop: '3%',
   },
   container: {
     padding: '2%',
   },
   previewImage: {
-    width: 200,
-    height: 200,
+    marginTop: 20,
+    width: 240,
+    height: 240,
   }
 });

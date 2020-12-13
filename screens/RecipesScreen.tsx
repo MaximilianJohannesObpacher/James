@@ -1,3 +1,4 @@
+import { preventAutoHide } from 'expo-splash-screen';
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { FlatList } from 'react-native';
@@ -7,7 +8,7 @@ import DrinkPreview from '../components/DrinkPreview';
 import { Text, View } from '../components/Themed';
 
 let drinks = [
-  {key: 'Whiskey Sour', imageLink: require('../img/appletini.jpg')},
+  {key: 'Whiskey Sour', imageLink: require('../img/whiskey_sour.jpg')},
   {key: 'Touchdown', imageLink: require('../img/touchdown.jpg')},
   {key: 'Mojito', imageLink: require('../img/mojito.jpg')},
   {key: 'White Russian', imageLink: require('../img/white_russian.jpg')},
@@ -18,26 +19,28 @@ let drinks = [
 export default function RecipesScreen() {
   return (
     <View style={styles.container}>
+      <ScrollView>
         <FlatList
+          contentContainerStyle={styles.flatList}
+          horizontal={true}
           data={drinks}
-          style={styles.flatList}
-          numColumns={drinks.length / 2}
           renderItem={({item}) => <DrinkPreview name={item.key} imageReference={item.imageLink}/>}
         />
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   flatList: {
-    paddingTop: '5%',
-    flex: 1,
     display: 'flex',
-    flexWrap: 'wrap'
+    paddingLeft: '4%',
+    // alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    flex: 1,
   },
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
