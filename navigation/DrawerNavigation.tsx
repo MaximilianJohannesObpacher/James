@@ -5,7 +5,7 @@ import * as React from 'react';
 import useColorScheme from '../hooks/useColorScheme';
 import RecipesScreen from '../screens/RecipesScreen';
 import OrdersScreen from '../screens/OrdersScreen';
-import { OrdersParamList, StockParamList, RecipesParamList } from '../types';
+import { OrdersParamList, StockParamList, RecipesParamList, RecipesDetailParamList } from '../types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import StockScreen from '../screens/StockScreen';
 
